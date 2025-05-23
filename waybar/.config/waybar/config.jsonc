@@ -25,6 +25,7 @@
     "custom/separator",
     "tray",
     "custom/separator",
+    "custom/dunst",
     "custom/hyprsunset",
     "bluetooth",
     "network",
@@ -62,7 +63,7 @@
   },
 
   "wlr/taskbar#expanded": {
-    "format": "{icon} {title}",
+    "format": "{icon}{title}",
     "on-click": "activate",
     "icon-size": 20,
   },
@@ -72,6 +73,7 @@
   "hyprland/window": {
     "format": " - {title}",
     "icon": true,
+    "max-length": 60,
   },
 
   // modules-right
@@ -96,6 +98,15 @@
 
   "tray": {
     "spacing": 4,
+  },
+
+  "custom/dunst": {
+    "on-click": "dunstctl history-pop",
+    "on-click-right": "dunstctl history-clear",
+    "on-click-middle": "dunstctl set-paused toggle",
+    "exec": "~/.config/waybar/scripts/dunst/exec.sh",
+    "restart-interval": 1,
+    "tooltip-format": "Mouse Middle - Mute\rMouse Right - Clear History",
   },
     
   "custom/hyprsunset": {
