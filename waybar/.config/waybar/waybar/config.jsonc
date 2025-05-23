@@ -1,0 +1,171 @@
+{
+  "layer": "bottom",
+  "output": "!DP-3",
+  "reload_style_on_change": true,
+  "height": 30,
+  "spacing": 4,
+  "margin-top": 4,
+  "margin-left": 4,
+  "margin-right": 4,
+  
+  "modules-left": [
+    "custom/startbutton",
+    "hyprland/workspaces",
+    "group/tasks",
+  ],
+
+  "modules-center": [
+    "hyprland/window",
+  ],
+
+  "modules-right": [
+    "network#speed",
+    "cpu",
+    "memory",
+    "custom/separator",
+    "tray",
+    "custom/separator",
+    "custom/hyprsunset",
+    "bluetooth",
+    "network",
+    "pulseaudio",
+    "clock",
+    "custom/power",
+  ],
+
+  // modules-left
+
+  "custom/startbutton": {
+    "format": " ",
+    "on-click": "rofi -show drun -run-command 'uwsm app -- {cmd}'",
+  },
+
+  "hyprland/workspaces": {
+     "format": "{id}",
+  },
+
+  "group/tasks": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+    },
+    "modules": [
+      "wlr/taskbar#main",
+      "wlr/taskbar#expanded",
+    ],
+  },
+
+  "wlr/taskbar#main": {
+    "sort-by-app-id": true,
+    "on-click": "activate",
+    "icon-size": 20,
+  },
+
+  "wlr/taskbar#expanded": {
+    "format": "{icon} {title}",
+    "on-click": "activate",
+    "icon-size": 20,
+  },
+
+  // modules-center
+
+  "hyprland/window": {
+    "format": " - {title}",
+    "icon": true,
+  },
+
+  // modules-right
+
+  "network#speed": {
+    "interval": 1,
+    "format": " {bandwidthUpBytes} |  {bandwidthDownBytes}",
+  },
+
+  "cpu": {
+    "format": " {usage}%",
+  },
+
+  "memory": {
+    "format": " {used}Gib",
+  },
+
+  "custom/separator": {
+    "format": "|",
+    "tooltip": false,
+  },
+
+  "tray": {
+    "spacing": 4,
+  },
+    
+  "custom/hyprsunset": {
+    "interval": "once",
+    "exec": "~/.config/waybar/scripts/hyprsunset/exec.sh",
+    "on-click": "",
+    "tooltip-format": "Night Light",
+  },
+
+  "bluetooth":{
+    "format": "󰂯 ",
+    "format-disabled": "󰂲 ", // an empty format will hide the module
+    "format-connected": "󰂱 ",
+    "tooltip-format": "{controller_alias}\t{controller_address}",
+    "tooltip-format-disabled": "Bluetooth Disabled",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+    "on-click": "exec blueberry",
+  },
+
+  "network":{
+    "format": "{ifname}",
+    "format-wifi": " ",
+    "format-ethernet": " ",
+    "format-disconnected": "󰌙 ", //An empty format will hide the module.
+    "tooltip-format": "{ifname} via {gwaddr}, {ipaddr}/{cidr}",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%) {ipaddr}/{cidr}",
+    "tooltip-format-ethernet": "{ipaddr}/{cidr}",
+    "tooltip-format-disconnected": "Disconnected",
+    "on-click": "kitty nmtui",
+    "max-length": 20,
+  },
+
+  "pulseaudio":{
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "󰂰 {icon} {volume}%",
+    "format-muted": " ",
+    "format-icons": {
+        "headphone": " ",
+        "hands-free": " ",
+        "headset": " ",
+        "phone": " ",
+        "phone-muted": " ",
+        "portable": " ",
+        "car": " ",
+        "default": [" ", " ", " "]
+    },
+    "scroll-step": 1,
+    "on-click": "pavucontrol",
+    "on-click-middle": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "ignored-sinks": ["Easy Effects Sink"]
+  },
+
+  "clock":{
+    "interval": 60,
+    "format": "{:%H:%M}",
+    "format-alt": "{:%A, %B %d, %Y (%R)}",
+    "tooltip-format": "{:%A, %B %d, %Y (%R)}",
+    "max-length": 25,
+  },
+  
+  "custom/power":{
+    "format": " ",
+    "tooltip-format": "Power Menu",
+		"menu": "on-click",
+		"menu-file": "~/.config/waybar/power_menu.xml",
+		"menu-actions": {
+			"shutdown": "shutdown",
+			"reboot": "reboot",
+			"suspend": "systemctl suspend",
+		},
+  },
+
+}

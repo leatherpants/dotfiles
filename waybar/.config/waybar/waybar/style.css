@@ -1,0 +1,91 @@
+@define-color primary #e21d4a;
+@define-color on-primary #ffffff;
+@define-color primary-container #ffdada;
+@define-color on-primary-container #723338;
+
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "FiraCode Nerd Font", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  min-height: 0;
+}
+
+window#waybar {
+  background-color: transparent;
+}
+
+widget {
+  background-color: @primary-container;
+  color: @on-primary-container;
+  border-radius: 4px;
+}
+
+widget:first-child {
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+}
+
+widget:last-child {
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+.modules-left widget {
+  background-color: transparent;
+  border-radius: 16px;
+}
+
+button {
+  all: unset;
+}
+
+#custom-startbutton  {
+  padding-left: 9px;
+  padding-right: 6px;
+  background-color: #333333;
+  color: #1793d1;
+  border-radius: 16px;
+}
+
+#workspaces button {
+  padding: 0 10px;
+  background-color: @primary-container;
+  border-radius: 4px;
+  margin: 0 1px;
+}
+
+#workspaces button.active {
+  border-radius: 16px;
+  background-color: @primary;
+  color: @on-primary;
+}
+
+#taskbar.main {
+  background-color: @primary-container;
+  border-radius: 16px;
+  padding: 0 4px;
+}
+
+#taskbar.main button {
+  padding: 0 4px;
+}
+
+#taskbar.expanded button {
+  background-color: @primary-container;
+  border-radius: 16px;
+  padding: 0 4px;
+  margin: 0 2px;
+}
+
+#window {
+  padding: 0 4px;
+}
+
+.modules-right label {
+  padding: 0 8px;
+}
+
+#tray {
+  padding: 0 8px;
+}
