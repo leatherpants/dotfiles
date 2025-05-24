@@ -79,7 +79,8 @@ button {
 }
 
 #window {
-  padding: 0 4px;
+  padding-left: 4px;
+  padding-right: 8px;
 }
 
 .modules-right label {
@@ -88,4 +89,20 @@ button {
 
 #tray {
   padding: 0 8px;
+}
+
+#custom-dunst {
+  padding-right: 4px;
+}
+
+#custom-hyprsunset {
+  padding-right: 4px;
+}
+
+#network {
+  padding-right: 4px;
+}
+
+#bluetooth {
+  padding-right: 4px;
 }
