@@ -1,10 +1,20 @@
 #!/usr/bin/env bash
 
-# COUNT=$(dunstctl count waiting)
+HISTORY=$(dunstctl count history)
+WAITING=$(dunstctl count waiting)
+DISPLAYED=$(dunstctl count displayed)
 PAUSED=$(dunstctl is-paused)
 
 if [[ $PAUSED = false ]]; then
-  echo " "
+  if [[ $HISTORY > 0 || $DISPLAYED > 0 ]]; then
+    echo "󰂚 $HISTORY"
+  else
+    echo "󰂜 "
+  fi
 else
-  echo " "
+  if [[ $WAITING > 0 ]]; then
+    echo "󰂛 $WAITING"
+  else
+    echo "󰪑 "
+  fi
 fi
