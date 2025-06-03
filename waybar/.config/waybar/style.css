@@ -55,6 +55,16 @@ button {
   margin: 0 1px;
 }
 
+#workspaces button:first-child {
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+}
+
+#workspaces button:last-child {
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
 #workspaces button.active {
   border-radius: 16px;
   background-color: @primary;
@@ -105,4 +115,15 @@ button {
 
 #bluetooth {
   padding-right: 4px;
+}
+
+menu {
+  background-color: @primary-container;
+  border-radius: 16px;
+}
+
+menuitem:hover {
+  background-color: @primary;
+  color: @on-primary;
+  border-radius: 16px;
 }

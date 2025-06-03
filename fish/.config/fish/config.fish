@@ -4,3 +4,4 @@ if status is-interactive
 end
 
 set -x -U GOPATH $HOME/.go
+set -x -U EDITOR nvim

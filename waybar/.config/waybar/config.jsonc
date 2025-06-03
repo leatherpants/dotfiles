@@ -73,7 +73,7 @@
   "hyprland/window": {
     "format": " - {title}",
     "icon": true,
-    "max-length": 60,
+    "max-length": 40,
   },
 
   // modules-right
@@ -140,8 +140,8 @@
   },
 
   "pulseaudio":{
-    "format": "{icon} {volume}%",
-    "format-bluetooth": "󰂰 {icon} {volume}%",
+    "format": "{icon}{volume}%",
+    "format-bluetooth": "󰂰 {icon}{volume}%",
     "format-muted": " ",
     "format-icons": {
         "headphone": " ",
