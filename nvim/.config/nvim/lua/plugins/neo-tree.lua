@@ -12,8 +12,6 @@ return {
   ---@type neotree.Config?
   opts = {
     -- fill any relevant options here
+    vim.keymap.set("n", "<leader>e", "<Cmd>Neotree reveal toggle<CR>")
   },
-  config = function()
-    vim.keymap.set('n', '<leader>e', ':Neotree filesystem toggle left<CR>', {})
-  end,
 }

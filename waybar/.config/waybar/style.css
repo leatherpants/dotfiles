@@ -78,7 +78,7 @@ button {
 }
 
 #taskbar.main button {
-  padding: 0 4px;
+  padding: 0 2px;
 }
 
 #taskbar.expanded button {
@@ -86,6 +86,11 @@ button {
   border-radius: 16px;
   padding: 0 4px;
   margin: 0 2px;
+}
+
+#taskbar.expanded button.active {
+  background-color: @primary;
+  color: @on-primary;
 }
 
 #window {

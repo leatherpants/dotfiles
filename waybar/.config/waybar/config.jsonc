@@ -63,7 +63,8 @@
   },
 
   "wlr/taskbar#expanded": {
-    "format": "{icon}{title}",
+    "sort-by-app-id": true,
+    "format": "{icon}{title:.25}",
     "on-click": "activate",
     "icon-size": 20,
   },
@@ -112,7 +113,7 @@
   "custom/hyprsunset": {
     "interval": "once",
     "exec": "~/.config/waybar/scripts/hyprsunset/exec.sh",
-    "on-click": "",
+    "on-click": "~/.config/waybar/scripts/hyprsunset/on-click.sh",
     "tooltip-format": "Night Light",
   },
 
