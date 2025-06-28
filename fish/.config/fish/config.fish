@@ -5,3 +5,4 @@ end
 
 set -x -U GOPATH $HOME/.go
 set -x -U EDITOR nvim
+set -x -U ALIYUNPAN_CONFIG_DIR /home/xuhan/.config/aliyunpan

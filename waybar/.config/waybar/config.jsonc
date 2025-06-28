@@ -1,4 +1,4 @@
-{
+[{
   "layer": "bottom",
   "output": "!DP-3",
   "reload_style_on_change": true,
@@ -12,10 +12,10 @@
     "custom/startbutton",
     "hyprland/workspaces",
     "group/tasks",
+    "hyprland/window",
   ],
 
   "modules-center": [
-    "hyprland/window",
   ],
 
   "modules-right": [
@@ -26,7 +26,7 @@
     "tray",
     "custom/separator",
     "custom/dunst",
-    "custom/hyprsunset",
+    // "custom/hyprsunset",
     "bluetooth",
     "network",
     "pulseaudio",
@@ -74,7 +74,8 @@
   "hyprland/window": {
     "format": " - {title}",
     "icon": true,
-    "max-length": 40,
+    "max-length": 60,
+    "seperate-outputs": true,
   },
 
   // modules-right
@@ -165,7 +166,7 @@
     "format": "{:%H:%M}",
     "format-alt": "{:%A, %B %d, %Y (%R)}",
     "tooltip-format": "{:%A, %B %d, %Y (%R)}",
-    "max-length": 25,
+    // "max-length": 25,
   },
   
   "custom/power":{
@@ -180,4 +181,52 @@
 		},
   },
 
-}
+},
+{
+  "name": "portrait",
+  "layer": "bottom",
+  "output": "DP-3",
+  "reload_style_on_change": true,
+  "height": 30,
+  "spacing": 4,
+  "margin-top": 5,
+  "margin-left": 10,
+  "margin-right": 10,
+  
+  "modules-left": [
+    "hyprland/workspaces",
+    "hyprland/window",
+  ],
+
+  "modules-center": [
+  ],
+
+  "modules-right": [
+    "clock",
+  ],
+
+  // modules-left
+
+  "hyprland/workspaces": {
+     "format": "{id}",
+  },
+
+  // modules-center
+
+  "hyprland/window": {
+    "format": " - {title}",
+    "icon": true,
+    "max-length": 40,
+    "seperate-outputs": true,
+  },
+
+  // modules-right
+
+  "clock":{
+    "interval": 60,
+    "format": "{:%A, %B %d, %Y (%R)}",
+    "tooltip-format": "{:%A, %B %d, %Y (%R)}",
+    // "max-length": 25,
+  },
+  
+}]

@@ -49,7 +49,8 @@ button {
 }
 
 #workspaces button {
-  padding: 0 10px;
+  padding-left: 10px;
+  padding-right: 11px;
   background-color: @primary-container;
   border-radius: 4px;
   margin: 0 1px;
@@ -96,6 +97,8 @@ button {
 #window {
   padding-left: 4px;
   padding-right: 8px;
+  border-radius: 16px;
+  background-color: @primary-container;
 }
 
 .modules-right label {
@@ -131,4 +134,9 @@ menuitem:hover {
   background-color: @primary;
   color: @on-primary;
   border-radius: 16px;
+}
+
+window#waybar.portrait #clock {
+  font-weight: bold;
+  font-style: italic;
 }

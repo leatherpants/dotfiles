@@ -146,7 +146,7 @@ format = '[ $symbol ($version) ]($style)'
 [python]
 symbol = " "
 style = "bg:#86BBD8"
-format = '[ $symbol ($virtualenv) ]($style)'
+format = '[ $symbol ($version)( $virtualenv) ]($style)'
 
 [time]
 disabled = false

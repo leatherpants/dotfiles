@@ -4,7 +4,7 @@ state=$(cat ~/.config/waybar/scripts/hyprsunset/state)
 
 if [[ $state = "day" ]];then
   echo night > ~/.config/waybar/scripts/hyprsunset/state
-  hyprctl hyprsunset temperature 5500 > /dev/null
+  hyprctl hyprsunset temperature 6000 > /dev/null
 else
   echo day > ~/.config/waybar/scripts/hyprsunset/state
   hyprctl hyprsunset identity > /dev/null
