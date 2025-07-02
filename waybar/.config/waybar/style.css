@@ -4,64 +4,42 @@
 @define-color on-primary-container #723338;
 
 * {
-  border: none;
-  border-radius: 0;
+  all: unset;
   font-family: "FiraCode Nerd Font", Roboto, Helvetica, Arial, sans-serif;
   font-size: 13px;
-  min-height: 0;
 }
 
 window#waybar {
   background-color: transparent;
-}
-
-widget {
-  background-color: @primary-container;
   color: @on-primary-container;
-  border-radius: 4px;
-}
-
-widget:first-child {
-  border-top-left-radius: 16px;
-  border-bottom-left-radius: 16px;
-}
-
-widget:last-child {
-  border-top-right-radius: 16px;
-  border-bottom-right-radius: 16px;
-}
-
-.modules-left widget {
-  background-color: transparent;
-  border-radius: 16px;
-}
-
-button {
-  all: unset;
 }
 
 #custom-startbutton  {
   padding-left: 9px;
   padding-right: 6px;
+  border-radius: 16px;
   background-color: #333333;
   color: #1793d1;
-  border-radius: 16px;
 }
 
 #workspaces button {
-  padding-left: 10px;
+  padding-left: 11px;
   padding-right: 11px;
-  background-color: @primary-container;
   border-radius: 4px;
   margin: 0 1px;
+  background-color: @primary-container;
 }
 
 #workspaces button:first-child {
+  padding-left: 13px;
+  padding-right: 11px;
   border-top-left-radius: 16px;
   border-bottom-left-radius: 16px;
 }
 
 #workspaces button:last-child {
+  padding-left: 11px;
+  padding-right: 13px;
   border-top-right-radius: 16px;
   border-bottom-right-radius: 16px;
 }
@@ -69,13 +47,16 @@ button {
 #workspaces button.active {
   border-radius: 16px;
   background-color: @primary;
+}
+
+#workspaces button.active label {
   color: @on-primary;
 }
 
 #taskbar.main {
-  background-color: @primary-container;
   border-radius: 16px;
   padding: 0 4px;
+  background-color: @primary-container;
 }
 
 #taskbar.main button {
@@ -83,15 +64,23 @@ button {
 }
 
 #taskbar.expanded button {
-  background-color: @primary-container;
   border-radius: 16px;
-  padding: 0 4px;
+  padding-left: 4px;
+  padding-right: 8px;
   margin: 0 2px;
+  background-color: @primary-container;
 }
 
 #taskbar.expanded button.active {
   background-color: @primary;
+}
+
+#taskbar.expanded button.active label {
   color: @on-primary;
+}
+
+#taskbar.empty {
+  background-color: transparent;
 }
 
 #window {
@@ -99,6 +88,25 @@ button {
   padding-right: 8px;
   border-radius: 16px;
   background-color: @primary-container;
+}
+
+window#waybar.empty #window {
+  background-color: transparent;
+}
+
+.modules-right widget {
+  background-color: @primary-container;
+  border-radius: 4px;
+}
+
+.modules-right widget:first-child {
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+}
+
+.modules-right widget:last-child {
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
 }
 
 .modules-right label {
@@ -126,17 +134,41 @@ button {
 }
 
 menu {
-  background-color: @primary-container;
   border-radius: 16px;
+  padding: 6px;
+  background-color: @primary-container;
+  color: @on-primary-container;
+}
+
+menuitem {
+  padding: 6px;
+  border-radius: 16px;
+}
+
+menuitem:disabled {
+  color: grey;
 }
 
 menuitem:hover {
   background-color: @primary;
   color: @on-primary;
+}
+
+separator {
+  padding: 1px;
+  margin: 4px;
+  opacity: 0.1;
+  background-color: @primary;
+}
+
+tooltip {
+  background-color: black;
   border-radius: 16px;
+  opacity: 0.75;
 }
 
 window#waybar.portrait #clock {
   font-weight: bold;
   font-style: italic;
 }
+

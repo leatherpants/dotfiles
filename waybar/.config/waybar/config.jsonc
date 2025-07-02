@@ -12,10 +12,10 @@
     "custom/startbutton",
     "hyprland/workspaces",
     "group/tasks",
-    "hyprland/window",
   ],
 
   "modules-center": [
+    "hyprland/window",
   ],
 
   "modules-right": [
@@ -72,9 +72,8 @@
   // modules-center
 
   "hyprland/window": {
-    "format": " - {title}",
     "icon": true,
-    "max-length": 60,
+    "max-length": 50,
     "seperate-outputs": true,
   },
 
@@ -195,10 +194,10 @@
   
   "modules-left": [
     "hyprland/workspaces",
-    "hyprland/window",
   ],
 
   "modules-center": [
+    "hyprland/window",
   ],
 
   "modules-right": [
@@ -214,9 +213,8 @@
   // modules-center
 
   "hyprland/window": {
-    "format": " - {title}",
     "icon": true,
-    "max-length": 40,
+    "max-length": 50,
     "seperate-outputs": true,
   },
 
