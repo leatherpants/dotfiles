@@ -12,8 +12,7 @@
 .control-center {
   border-radius: 16px;
   background-color: alpha(@surface, 0.25);
-  /* background-color: @surface-container; */
-  color: @on-surface;
+  color: @on-surface-variant;
 }
 
 .control-center>viewport>box>box:last-child {
@@ -44,24 +43,21 @@
   padding: 12px 16px;
   border-radius: 500px;
   font-size: 12px;
-  color: @on-surface;
   background-color: @surface;
 }
 
 .control-center-clear-all:hover {
-  background-color: @surface-container;
+  background-color: darker(@surface);
 }
 
 .control-center-clear-all:active {
-  /* background-color: darker(@surface); */
-  color: @on-primary;
-  background-color: @primary;
+  background-color: darker(darker(@surface));
 }
 
 .control-center-dnd {
   padding: 3px;
   border-radius: 500px;
-  background-color: @surface;
+  background-color: @surface-container;
   border: 2px solid grey;
 }
 
@@ -82,12 +78,8 @@
 
 .control-center-dnd:checked {
   padding: 5px;
-  background-color: @primary;
+  background-color: @primary-container;
   border: none;
-}
-
-.control-center-dnd:checked slider:hover {
-  background-color: lighter(@surface);
 }
 
 .control-center-dnd:checked slider {
@@ -115,7 +107,7 @@
   margin-bottom: 2px;
   padding: 24px;
   background-color: @surface-container;
-  color: @on-primary-container;
+  color: @on-surface-variant;
 }
 
 .notification-group:first-child .notification {
@@ -151,20 +143,20 @@
 }
 
 .critical.notification {
-  color: @on-primary;
-  background-color: @primary;
+  color: @on-primary-container;
+  background-color: @primary-container;
 }
 
 .critical .notification-alt-actions button {
-  color: @on-primary;
+  color: @on-primary-container;
 }
 
 .critical .notification-alt-actions button:hover {
-  color: darker(@on-primary);
+  color: darker(@on-primary-container);
 }
 
 .critical .notification-alt-actions button:active {
-  color: darker(darker(@on-primary));
+  color: darker(darker(@on-primary-container));
 }
 
 .notification-content .text-box {
