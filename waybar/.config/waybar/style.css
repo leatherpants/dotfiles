@@ -1,7 +1,4 @@
-@define-color primary #e21d4a;
-@define-color on-primary #ffffff;
-@define-color primary-container #ffdada;
-@define-color on-primary-container #723338;
+@import "styles/colors.css";
 
 * {
   all: unset;
@@ -49,6 +46,16 @@ window#waybar {
   background-color: @primary;
 }
 
+#workspaces button:first-child.active {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+#workspaces button:last-child.active {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 #workspaces button.active label {
   color: @on-primary;
 }
@@ -90,6 +97,13 @@ window#waybar {
   background-color: @primary-container;
 }
 
+#mpris {
+  padding-left: 12px;
+  padding-right: 16px;
+  border-radius: 16px;
+  background-color: @primary-container;
+}
+
 window#waybar.empty #window {
   background-color: transparent;
 }
@@ -113,11 +127,16 @@ window#waybar.empty #window {
   padding: 0 8px;
 }
 
+#temperature.critical {
+  background-color: @primary;
+  color: @on-primary;
+}
+
 #tray {
   padding: 0 8px;
 }
 
-#custom-dunst {
+#custom-notification {
   padding-right: 4px;
 }
 
@@ -158,7 +177,7 @@ separator {
   padding: 1px;
   margin: 4px;
   opacity: 0.1;
-  background-color: @primary;
+  background-color: @on-primary;
 }
 
 tooltip {

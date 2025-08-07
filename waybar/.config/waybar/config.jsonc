@@ -1,6 +1,6 @@
 [{
   "layer": "bottom",
-  "output": "!DP-3",
+  "output": "DP-1",
   "reload_style_on_change": true,
   "height": 30,
   "spacing": 4,
@@ -12,20 +12,22 @@
     "custom/startbutton",
     "hyprland/workspaces",
     "group/tasks",
+    "hyprland/window",
   ],
 
   "modules-center": [
-    "hyprland/window",
+    "mpris",
   ],
 
   "modules-right": [
     "network#speed",
     "cpu",
     "memory",
+    "temperature",
     "custom/separator",
     "tray",
     "custom/separator",
-    "custom/dunst",
+    "custom/notification",
     // "custom/hyprsunset",
     "bluetooth",
     "network",
@@ -71,9 +73,28 @@
 
   // modules-center
 
+  "mpris": {
+    "max-length": 40,
+    "format": "{player_icon} {title} - {artist} - {album}",
+    "format-paused": "{status_icon} {title} - {artist} - {album}",
+    "format-stopped": "{status_icon} {title} - {artist} - {album}",
+    "player-icons": {
+      "default": "",
+      "firefox": "",
+      "google-chrome-stable": "",
+      "spotify": "",
+      "youtube": "",
+    },
+    "status-icons": {
+      "playing": "",
+      "paused": "",
+      "stopped": "",
+    },
+  },
+
   "hyprland/window": {
     "icon": true,
-    "max-length": 50,
+    // "max-length": 50,
     "seperate-outputs": true,
   },
 
@@ -92,6 +113,19 @@
     "format": " {used}Gib",
   },
 
+  "temperature": {
+    "thermal-zone": 0,
+    "format": "{icon} {temperatureC}°C",
+    "critical-threshold": 80,
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+    ],
+  },
+
   "custom/separator": {
     "format": "|",
     "tooltip": false,
@@ -101,15 +135,36 @@
     "spacing": 4,
   },
 
-  "custom/dunst": {
-    "on-click": "dunstctl history-pop",
-    "on-click-right": "dunstctl history-clear",
-    "on-click-middle": "dunstctl set-paused toggle",
-    "exec": "~/.config/waybar/scripts/dunst/exec.sh",
-    "restart-interval": 1,
-    "tooltip-format": "Mouse Middle - Mute\rMouse Right - Clear History",
+  // "custom/dunst": {
+  //   "on-click": "dunstctl history-pop",
+  //   "on-click-right": "dunstctl history-clear",
+  //   "on-click-middle": "dunstctl set-paused toggle",
+  //   "exec": "~/.config/waybar/scripts/dunst/exec.sh",
+  //   "restart-interval": 1,
+  //   "tooltip-format": "Mouse Middle - Mute\rMouse Right - Clear History",
+  // },
+
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "󰂚 ",
+      "none": "󰂜 ",
+      "dnd-notification": "󰂛 ",
+      "dnd-none": " ",
+      "inhibited-notification": "󰂚 ",
+      "inhibited-none": " ",
+      "dnd-inhibited-notification": "󰂛 ",
+      "dnd-inhibited-none": "󰪑 "
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-middle": "swaync-client -d -sw",
+    "escape": true
   },
-    
+
   "custom/hyprsunset": {
     "interval": "once",
     "exec": "~/.config/waybar/scripts/hyprsunset/exec.sh",
@@ -184,7 +239,7 @@
 {
   "name": "portrait",
   "layer": "bottom",
-  "output": "DP-3",
+  "output": "!DP-1",
   "reload_style_on_change": true,
   "height": 30,
   "spacing": 4,
@@ -194,10 +249,10 @@
   
   "modules-left": [
     "hyprland/workspaces",
+    "hyprland/window",
   ],
 
   "modules-center": [
-    "hyprland/window",
   ],
 
   "modules-right": [
@@ -214,7 +269,7 @@
 
   "hyprland/window": {
     "icon": true,
-    "max-length": 50,
+    // "max-length": 50,
     "seperate-outputs": true,
   },
 

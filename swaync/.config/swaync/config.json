@@ -1,0 +1,66 @@
+{
+  "$schema": "/etc/xdg/swaync/configSchema.json",
+
+  "notification-window-preferred-output": "DP-1",
+
+  "image-visibility": "always",
+
+  "hide-on-clear": true,
+  "hide-on-action": false,
+
+  "control-center-margin-top": 9,
+  "control-center-margin-bottom": 9,
+  "control-center-margin-right": 9,
+
+  "notification-icon-size": 48,
+
+  "control-center-width": 450,
+  "notification-window-width": 400,
+
+  "notification-grouping": false,
+
+  "script-fail-notify": true,
+
+  "notification-visibility": {
+    "example-name": {
+      "state": "muted",
+      "urgency": "Low",
+      "app-name": "Spotify"
+    }
+  },
+
+  "widgets": [
+    "inhibitors",
+    "title",
+    "dnd",
+    "mpris",
+    "notifications"
+  ],
+
+  "widget-config": {
+
+    "inhibitors": {
+      "text": "Inhibitors",
+      "button-text": "Clear All",
+      "clear-all-button": true
+    },
+
+    "title": {
+      "text": "Notifications",
+      "clear-all-button": true,
+      "button-text": "Clear All"
+    },
+    
+    "dnd": {
+      "text": "Do Not Disturb"
+    },
+
+    "mpris": {
+      "blacklist": [],
+      "autohide": true,
+      "show-album-art": "always",
+      "loop-carousel": true
+    }
+
+  }
+}
