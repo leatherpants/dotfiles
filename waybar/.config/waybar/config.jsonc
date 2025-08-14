@@ -61,14 +61,18 @@
   "wlr/taskbar#main": {
     "sort-by-app-id": true,
     "on-click": "activate",
+    "on-click-middle": "close",
     "icon-size": 20,
+    "all-outputs": true,
   },
 
   "wlr/taskbar#expanded": {
     "sort-by-app-id": true,
     "format": "{icon}{title:.25}",
     "on-click": "activate",
+    "on-click-middle": "close",
     "icon-size": 20,
+    "all-outputs": true,
   },
 
   // modules-center

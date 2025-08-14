@@ -6,7 +6,7 @@
 
 :root {
   font-family: "FiraCode Nerd Font", sans-serif;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .control-center {
@@ -40,7 +40,7 @@
 }
 
 .control-center-clear-all {
-  padding: 12px 16px;
+  padding: 10px 12px;
   border-radius: 500px;
   font-size: 12px;
   background-color: @surface;
@@ -62,8 +62,8 @@
 }
 
 .control-center-dnd slider {
-  min-width: 20px;
-  min-height: 20px;
+  min-width: 16px;
+  min-height: 16px;
   border-radius: 50%;
   background-color: grey;
 }
@@ -83,8 +83,8 @@
 }
 
 .control-center-dnd:checked slider {
-  min-width: 20px;
-  min-height: 20px;
+  min-width: 16px;
+  min-height: 16px;
   background-color: @surface;
 }
 

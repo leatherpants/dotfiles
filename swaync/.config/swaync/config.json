@@ -62,5 +62,12 @@
       "loop-carousel": true
     }
 
+  },
+
+  "scripts": {
+    "notification-sound": {
+        "exec": "bash /home/xuhan/.config/swaync/scripts/notification-sound.sh",
+      "app-name": ".*"
+    }
   }
 }

@@ -187,7 +187,8 @@ separator {
 
 tooltip {
   background-color: @inverse-surface;
-  color: @inverse-on-surface border-radius: 16px;
+  color: @inverse-on-surface;
+  border-radius: 16px;
   opacity: 0.75;
 }
 
