@@ -31,6 +31,7 @@
     // "custom/hyprsunset",
     "bluetooth",
     "network",
+    "custom/vpn",
     "pulseaudio",
     "clock",
     "custom/power",
@@ -197,6 +198,14 @@
     "tooltip-format-disconnected": "Disconnected",
     "on-click": "kitty nmtui",
     "max-length": 20,
+  },
+
+  "custom/vpn":{
+    "interval": "once",
+    "exec": "iwgetid -r",
+    "exec-on-event": true,
+    "on-click-right": "",
+    "on-click": "~/.config/waybar/scripts/vpn.sh",
   },
 
   "pulseaudio":{
