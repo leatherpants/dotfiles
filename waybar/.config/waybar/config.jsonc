@@ -202,7 +202,7 @@
 
   "custom/vpn":{
     "interval": "once",
-    "exec": "iwgetid -r",
+    "exec": "nmcli -t -f NAME connection show --active",
     "exec-on-event": true,
     "on-click-right": "",
     "on-click": "~/.config/waybar/scripts/vpn.sh",
