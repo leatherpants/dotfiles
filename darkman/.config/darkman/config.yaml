@@ -1,0 +1,24 @@
+# Configuration for darkman, typically located at ~/.config/darkman/config.yaml
+# All fields are optional.
+
+# lat, lng: Latitude and longitude for determining sunrise/sundown times.
+# If these are not set and 'usegeoclue' is true (the default), darkman will
+# attempt to determine location automatically.
+# Example format:
+lat: 55.45
+lng: 37.37
+
+# usegeoclue (true/false): Whether to use a local geoclue instance to
+# determine the current location.
+# Default: true
+# usegeoclue: true
+
+# dbusserver (true/false): Whether to expose the current mode via darkman's
+# own D-Bus API (used by the 'darkman set/get/toggle' commands).
+# Default: true
+dbusserver: true
+
+# portal (true/false): Whether to expose the current mode via the XDG settings
+# portal D-Bus API (used by many desktop applications).
+# Default: true
+portal: true

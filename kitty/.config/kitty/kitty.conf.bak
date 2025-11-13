@@ -1,5 +1,5 @@
 background_blur 1
-background_opacity 0.5
+background_opacity 0.75
 shell /usr/bin/fish
 
 window_padding_width 2
@@ -13,6 +13,6 @@ bold_italic_font auto
 
 
 # BEGIN_KITTY_THEME
-# Gruvbox Light Soft
+# Adwaita light
 include current-theme.conf
 # END_KITTY_THEME
