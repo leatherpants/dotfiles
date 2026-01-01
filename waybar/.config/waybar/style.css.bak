@@ -1,4 +1,4 @@
-@import "/home/xuhan/.cache/wal/colors-waybar.css";
+@import "styles/colors.css";
 
 * {
   all: unset;
@@ -8,7 +8,7 @@
 
 window#waybar {
   background-color: transparent;
-  color: #333;
+  color: @on-error-container;
 }
 
 #custom-startbutton {
@@ -24,11 +24,7 @@ window#waybar {
   padding-right: 11px;
   border-radius: 4px;
   margin: 0 1px;
-  background-color: @widget;
-}
-
-#workspaces button.hover {
-  background-color: @widget-hover;
+  background-color: @error-container;
 }
 
 #workspaces button:first-child {
@@ -47,7 +43,7 @@ window#waybar {
 
 #workspaces button.active {
   border-radius: 16px;
-  background-color: @primary;
+  background-color: @primary-container;
 }
 
 #workspaces button:first-child.active {
@@ -61,13 +57,13 @@ window#waybar {
 }
 
 #workspaces button.active label {
-  color: @on-primary;
+  color: @on-primary-container;
 }
 
 #taskbar.main {
   border-radius: 16px;
   padding: 0 4px;
-  background-color: @widget;
+  background-color: @error-container;
 }
 
 #taskbar.main button {
@@ -79,15 +75,15 @@ window#waybar {
   padding-left: 4px;
   padding-right: 8px;
   margin: 0 2px;
-  background-color: @widget;
+  background-color: @error-container;
 }
 
 #taskbar.expanded button.active {
-  background-color: @primary;
+  background-color: @primary-container;
 }
 
 #taskbar.expanded button.active label {
-  color: @on-primary;
+  color: @on-primary-container;
 }
 
 #taskbar.empty {
@@ -98,14 +94,14 @@ window#waybar {
   padding-left: 4px;
   padding-right: 8px;
   border-radius: 16px;
-  background-color: @widget;
+  background-color: @error-container;
 }
 
 #mpris {
   padding-left: 12px;
   padding-right: 16px;
   border-radius: 16px;
-  background-color: @widget;
+  background-color: @error-container;
 }
 
 window#waybar.empty #window {
@@ -113,7 +109,7 @@ window#waybar.empty #window {
 }
 
 .modules-right widget {
-  background-color: @widget;
+  background-color: @error-container;
   border-radius: 4px;
 }
 
@@ -132,8 +128,8 @@ window#waybar.empty #window {
 }
 
 #temperature.critical {
-  background-color: @primary;
-  color: @on-primary;
+  background-color: @primary-container;
+  color: @on-primary-container;
 }
 
 #tray {
@@ -160,7 +156,7 @@ menu {
   border-radius: 16px;
   padding: 6px;
   background-color: @surface;
-  color: #333;
+  color: @on-surface;
 }
 
 menuitem {
@@ -173,8 +169,8 @@ menuitem:disabled {
 }
 
 menuitem:hover {
-  background-color: @primary-variant;
-  color: @on-primary;
+  background-color: @surface-container;
+  color: @on-surface-variant;
 }
 
 menuitem:active {
@@ -186,12 +182,12 @@ separator {
   padding: 1px;
   margin: 4px;
   opacity: 0.1;
-  background-color: @separator;
+  background-color: @outline;
 }
 
 tooltip {
-  background-color: @surface;
-  color: @on-surface;
+  background-color: @inverse-surface;
+  color: @inverse-on-surface;
   border-radius: 16px;
   opacity: 0.75;
 }

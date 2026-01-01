@@ -1,0 +1,9 @@
+@define-color surface {color5};
+@define-color on-surface {color1};
+
+@define-color primary {color3};
+@define-color on-primary {foreground};
+@define-color primary-variant {color4};
+
+@define-color surface-variant {color6};
+@define-color surface-shade {color1};

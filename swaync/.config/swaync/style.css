@@ -1,4 +1,4 @@
-@import "../waybar/styles/colors.css";
+@import "/home/xuhan/.cache/wal/colors-swaync.css";
 
 * {
   all: unset;
@@ -11,8 +11,8 @@
 
 .control-center {
   border-radius: 16px;
-  background-color: alpha(@surface, 0.25);
-  color: @on-surface-variant;
+  background-color: alpha(@surface-variant, 0.25);
+  color: darker(darker(@on-surface));
 }
 
 .control-center>viewport>box>box:last-child {
@@ -22,7 +22,7 @@
   margin-top: 8px;
   padding: 24px;
   padding-top: 32px;
-  background-color: alpha(@secondary-container, 0.1);
+  background-color: alpha(@surface-shade, 0.3);
 }
 
 .widget-title {
@@ -43,21 +43,21 @@
   padding: 10px 12px;
   border-radius: 500px;
   font-size: 12px;
-  background-color: @surface;
+  background-color: @primary-variant;
 }
 
 .control-center-clear-all:hover {
-  background-color: darker(@surface);
+  background-color: darker(@primary-variant);
 }
 
 .control-center-clear-all:active {
-  background-color: darker(darker(@surface));
+  background-color: darker(darker(@primary-variant));
 }
 
 .control-center-dnd {
   padding: 3px;
   border-radius: 500px;
-  background-color: @surface-container;
+  background-color: @surface-variant;
   border: 2px solid grey;
 }
 
@@ -78,22 +78,22 @@
 
 .control-center-dnd:checked {
   padding: 5px;
-  background-color: @primary-container;
+  background-color: @primary;
   border: none;
 }
 
 .control-center-dnd:checked slider {
   min-width: 16px;
   min-height: 16px;
-  background-color: @surface;
+  background-color: @on-primary;
 }
 
 .control-center-dnd:checked slider:hover {
-  background-color: lighter(@surface);
+  background-color: lighter(@on-primary);
 }
 
 .control-center-dnd:checked slider:active {
-  background-color: darker(@surface);
+  background-color: darker(@on-primary);
 }
 
 .notification-row .close-button {
@@ -106,8 +106,8 @@
   margin-top: 2px;
   margin-bottom: 2px;
   padding: 24px;
-  background-color: @surface-container;
-  color: @on-surface-variant;
+  color: darker(darker(@on-surface));
+  background-color: @surface;
 }
 
 .notification-group:first-child .notification {
@@ -143,20 +143,20 @@
 }
 
 .critical.notification {
-  color: @on-primary-container;
-  background-color: @primary-container;
+  color: @on-primary;
+  background-color: @primary;
 }
 
 .critical .notification-alt-actions button {
-  color: @on-primary-container;
+  color: @on-primary;
 }
 
 .critical .notification-alt-actions button:hover {
-  color: darker(@on-primary-container);
+  color: darker(@on-primary);
 }
 
 .critical .notification-alt-actions button:active {
-  color: darker(darker(@on-primary-container));
+  color: darker(darker(@on-primary));
 }
 
 .notification-content .text-box {

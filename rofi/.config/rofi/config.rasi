@@ -167,7 +167,7 @@ configuration {
   }
 }
 
-@theme "my-theme"
+@theme "/home/xuhan/.cache/wal/colors-rofi.rasi"
 
 // listview {
 //   cycle: false;

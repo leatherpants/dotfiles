@@ -1,0 +1,14 @@
+@define-color widget {color6};
+@define-color widget-hover {color5};
+@define-color on-widget {background};
+
+@define-color primary {color2};
+@define-color on-primary {foreground};
+
+@define-color surface {color5};
+@define-color surface-hover {color6};
+@define-color on-surface {background};
+
+@define-color separator {background};
+
+@define-color primary-variant {color1};

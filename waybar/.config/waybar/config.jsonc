@@ -24,10 +24,12 @@
     "cpu",
     "memory",
     "temperature",
-    "custom/separator",
+    // "custom/separator",
+    "custom/wallpaper",
+    // "custom/separator",
     "tray",
-    "custom/separator",
     "custom/notification",
+    // "custom/separator",
     // "custom/hyprsunset",
     "bluetooth",
     "network",
@@ -168,6 +170,13 @@
     "on-click": "swaync-client -t -sw",
     "on-click-middle": "swaync-client -d -sw",
     "escape": true
+  },
+
+  "custom/wallpaper": {
+    "format": " ",
+    "tooltip": true,
+    "tooltip-format": "Change Wallpapers & Theme",
+    "on-click": "kitty --class float_term -e ~/.config/waybar/scripts/set-wallpapers.sh"
   },
 
   "custom/hyprsunset": {

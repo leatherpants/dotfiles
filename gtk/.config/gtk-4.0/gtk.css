@@ -1,2 +1,1 @@
-@define-color accent_bg_color #e12052;
-@define-color accent_color #b9003e;
+@import '../gtk-3.0/gtk.css';
