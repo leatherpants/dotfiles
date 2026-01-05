@@ -2,11 +2,11 @@ adw-gtk-theme
 amd-ucode
 amdgpu_top
 android-tools
+android-udev
 aria2
 base
 base-devel
 bind
-blueberry
 bluez
 bluez-utils
 breeze
@@ -30,6 +30,7 @@ git
 github-cli
 gnome-keyring
 go
+gparted
 grim
 grub
 grub-btrfs
@@ -67,6 +68,7 @@ ntfs-3g
 nwg-look
 obsidian
 pacman-contrib
+papirus-icon-theme
 pavucontrol
 pipewire
 pipewire-alsa
@@ -74,6 +76,7 @@ pipewire-jack
 pipewire-pulse
 polkit-kde-agent
 poppler-glib
+python-pywal
 qt5-wayland
 qt5ct
 qt6-wayland
@@ -85,10 +88,11 @@ seahorse
 slurp
 smartmontools
 sox
+sshfs
 starship
 stow
 swaync
-tela-circle-icon-theme-pink
+tela-circle-icon-theme-all
 thunar
 timeshift
 traceroute

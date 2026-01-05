@@ -44,6 +44,13 @@ for mon in $MONITORS; do
     done
 done
 
+# Apply wallpapers via hyprpaper IPC
+echo -e "\nApplying wallpapers via Hyprpaper..."
+for mon in "${!SELECTED_WALLS[@]}"; do
+    wall_path="${SELECTED_WALLS[$mon]}"
+    hyprctl hyprpaper wallpaper "$mon,$wall_path"
+done
+
 # 2. Ask for Pywal theme type
 echo -e "\n--- Pywal Theme ---"
 echo "Select Pywal color mode:"
@@ -75,18 +82,12 @@ else
     FINAL_ICON="Tela-circle-$color-$i_ver"
 fi
 
-# 5. Apply wallpapers via hyprpaper IPC
-echo -e "\nApplying wallpapers via Hyprpaper..."
-for mon in "${!SELECTED_WALLS[@]}"; do
-    wall_path="${SELECTED_WALLS[$mon]}"
-    hyprctl hyprpaper wallpaper "$mon,$wall_path"
-done
 
-# 6. Set icon theme via gsettings
+# 5. Set icon theme via gsettings
 echo "Setting icon theme to $FINAL_ICON..."
 gsettings set org.gnome.desktop.interface icon-theme "$FINAL_ICON"
 
-# 7. Apply Pywal based on the first monitor's wallpaper
+# 6. Apply Pywal based on the first monitor's wallpaper
 FIRST_MON=$(echo "$MONITORS" | head -n 1)
 FIRST_WALL="${SELECTED_WALLS[$FIRST_MON]}"
 
