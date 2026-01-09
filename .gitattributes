@@ -1,2 +1,0 @@
-# 强制 lazy-lock.json 始终使用 LF，防止跨平台同步报错
-lazy-lock.json text eol=lf
