@@ -1,3 +1,6 @@
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
 vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", {})
 vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", {})
 vim.keymap.set("n", "<A-j>", ":m .+1<CR>==") -- move line up(n)
