@@ -3,8 +3,9 @@ vim.g.maplocalleader = "\\"
 
 vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", {})
 vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", {})
-vim.keymap.set("n", "<A-j>", ":m .+1<CR>==") -- move line up(n)
-vim.keymap.set("n", "<A-k>", ":m .-2<CR>==") -- move line down(n)
+vim.keymap.set("n", "<A-j>", ":m .+1<CR>==")     -- move line up(n)
+vim.keymap.set("n", "<A-k>", ":m .-2<CR>==")     -- move line down(n)
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv") -- move line up(v)
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv") -- move line down(v)
 vim.keymap.set('n', "<leader>r", vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
+vim.keymap.set("n", "<leader>fm", vim.lsp.buf.format, { desc = 'Format current buffer with LSP' })
