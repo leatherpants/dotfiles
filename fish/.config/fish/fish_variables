@@ -1,6 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR --export ALIYUNPAN_CONFIG_DIR:/home/xuhan/\x2econfig/aliyunpan
+SETUVAR --export DEEPSEEK_API_KEY:sk\x2dcedfbc2dcda447fca221f9e2ceaf3cb4
 SETUVAR --export EDITOR:nvim
 SETUVAR --export --path GOPATH:/home/xuhan/\x2ego
 SETUVAR __fish_initialized:4300
