@@ -44,6 +44,13 @@ return {
     -- elsewhere in your config, without redefining it, due to `opts_extend`
     sources = {
       default = { 'lsp', 'path', 'snippets', 'buffer' },
+      providers = {
+        codeium = {
+          name = "Codeium",
+          module = "codeium.blink",   -- Native blink support
+          async = true,
+        },
+      },
     },
 
     -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
