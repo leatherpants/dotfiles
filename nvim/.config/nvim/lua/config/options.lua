@@ -15,6 +15,5 @@ vim.o.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-b
 vim.o.clipboard = "unnamedplus"
 
 -- Shell 
-vim.o.shell = "/usr/bin/fish"
-
+vim.o.shell = "/home/linuxbrew/.linuxbrew/bin/fish"
 -- Format
