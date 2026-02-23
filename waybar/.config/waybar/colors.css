@@ -1,0 +1,13 @@
+@define-color widget #ffdad4;
+@define-color widget-hover #825249;
+@define-color on-widget #33110b;
+
+@define-color primary #bd0044;
+@define-color on-primary #ffffff;
+
+@define-color surface #ffe9ea;
+@define-color menuitem-hover #895031;
+@define-color on-menuitem-hover #ffffff;
+@define-color on-surface #261819;
+
+@define-color separator #877274;

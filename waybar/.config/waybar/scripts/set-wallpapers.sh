@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
 
-# Directory for wallpapers
-WALL_DIR="$HOME/Pictures/wallpapers"
+### 1. WALLPAPERS ###
 
-# 1. Get available monitors without jq
+echo "--- Wallpaper Selection ---"
+
+# Get available monitors without jq
 MONITORS=$(hyprctl monitors | grep "Monitor" | awk '{print $2}')
 declare -A SELECTED_WALLS
 
-echo "--- Wallpaper Selection ---"
+# Directory for wallpapers
+WALL_DIR="$HOME/Pictures/wallpapers"
 
 # Get full paths of files
 mapfile -t FULL_PATHS < <(find "$WALL_DIR" -maxdepth 1 -type f \( -iname "*.jpg" -o -iname "*.png" -o -iname "*.jpeg" \))
@@ -51,18 +53,9 @@ for mon in "${!SELECTED_WALLS[@]}"; do
     hyprctl hyprpaper wallpaper "$mon,$wall_path"
 done
 
-# 2. Ask for Pywal theme type
-echo -e "\n--- Pywal Theme ---"
-echo "Select Pywal color mode:"
-select p_mode in "Dark" "Light"; do
-    case $p_mode in
-        "Light") PY_FLAG="-l"; break ;;
-        "Dark")  PY_FLAG=""; break ;;
-        *) echo "Invalid selection." ;;
-    esac
-done
 
-# 3. & 4. Icon Pack selection (Tela Circle)
+### 2. ICON THEME ###
+
 echo -e "\n--- Tela Circle Icon Theme ---"
 colors=("standard" "black" "blue" "brown" "dracula" "green" "grey" "manjaro" "nord" "orange" "pink" "purple" "red" "ubuntu" "yellow")
 echo "Choose a color variant:"
@@ -82,16 +75,46 @@ else
     FINAL_ICON="Tela-circle-$color-$i_ver"
 fi
 
-
-# 5. Set icon theme via gsettings
+# Set icon theme via gsettings
 echo "Setting icon theme to $FINAL_ICON..."
 gsettings set org.gnome.desktop.interface icon-theme "$FINAL_ICON"
 
-# 6. Apply Pywal based on the first monitor's wallpaper
+
+### 3. MATUGEN THEME ###
+
+echo -e "\n--- Light/Dark Theme ---"
+echo "Select color mode:"
+select p_mode in "Dark" "Light"; do
+    case $p_mode in
+        "Light") PY_FLAG="light"; break ;;
+        "Dark")  PY_FLAG="dark"; break ;;
+        *) echo "Invalid selection." ;;
+    esac
+done
+
+# Apply matugen based on the first monitor's wallpaper
 FIRST_MON=$(echo "$MONITORS" | head -n 1)
 FIRST_WALL="${SELECTED_WALLS[$FIRST_MON]}"
 
-echo "Generating Pywal theme from $(basename "$FIRST_WALL")..."
-wal -i "$FIRST_WALL" $PY_FLAG
+# copy the first wallpaper to matugen cache directory
+MATUGEN_CACHE_DIR="$HOME/.cache/matugen"
+if [[ ! -d "$MATUGEN_CACHE_DIR" ]]; then
+    echo "cache path does not exist, creating it: $MATUGEN_CACHE_DIR"
+    mkdir -p "$MATUGEN_CACHE_DIR"
+fi
+cp "$FIRST_WALL" "$MATUGEN_CACHE_DIR/wal"
+# Check if the copy was successful
+if [[ $? -eq 0 ]]; then
+    echo "Success, copied to: $MATUGEN_CACHE_DIR"
+else
+    echo "Failed to copy wallpaper to matugen cache directory."
+    exit 1
+fi
+
+echo "Generating Matugen theme from $(basename "$FIRST_WALL")..."
+matugen -t scheme-vibrant -m $PY_FLAG image "$FIRST_WALL"
 
 echo -e "\nConfiguration Complete!"
+
+read -n 1 -s -p "Press any key to exit..."
+exit

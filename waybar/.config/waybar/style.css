@@ -1,4 +1,5 @@
-@import "/home/xuhan/.cache/wal/colors-waybar.css";
+/* @import "/home/xuhan/.cache/wal/colors-waybar.css"; */
+@import "colors.css";
 
 * {
   all: unset;
@@ -8,7 +9,7 @@
 
 window#waybar {
   background-color: transparent;
-  color: #333;
+  color: @on-widget;
 }
 
 #custom-startbutton {
@@ -160,7 +161,7 @@ menu {
   border-radius: 16px;
   padding: 6px;
   background-color: @surface;
-  color: #333;
+  color: @on-surface;
 }
 
 menuitem {
@@ -173,8 +174,8 @@ menuitem:disabled {
 }
 
 menuitem:hover {
-  background-color: @primary-variant;
-  color: @on-primary;
+  background-color: @menuitem-hover;
+  color: @on-menuitem-hover;
 }
 
 menuitem:active {

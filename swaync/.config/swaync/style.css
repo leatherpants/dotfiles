@@ -1,4 +1,5 @@
-@import "/home/xuhan/.cache/wal/colors-swaync.css";
+/* @import "/home/xuhan/.cache/wal/colors-swaync.css"; */
+@import "colors.css";
 
 * {
   all: unset;

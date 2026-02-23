@@ -167,29 +167,4 @@ configuration {
   }
 }
 
-@theme "/home/xuhan/.cache/wal/colors-rofi.rasi"
-
-// listview {
-//   cycle: false;
-//   flow: horizontal;
-//   columns: 7;
-//   lines: 5;
-//   spacing: 1em;
-//   fixed-columns: true;
-//   fixed-height: true;
-// }
-//
-// element {
-//   orientation: vertical;
-//   children: [ element-icon, element-text ];
-//   spacing: 0.5em;
-// }
-//
-// element-icon {
-//   size: 5em;
-// }
-//
-// element-text {
-//   horizontal-align: 0.5;
-// }
-//
+@theme "my-theme.rasi"
