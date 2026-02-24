@@ -1,9 +1,11 @@
 * {
-  on-surface: #261819;
-  surface-container: #ffe9ea88;
-  surface: #fff8f7;
-  primary-container: #ffd9dd;
-  on-primary-container: #400012;
-  on-surface-variant: #554244;
-  selected: #89503155;
+  primary-container: #6f3800;
+  on-primary-container: #ffdcc4;
+
+  surface: #1d1108;
+  on-surface: #f7dece;
+  on-surface-variant: #dac2b3;
+
+  window-background: #2a1d1388;
+  selected: #e5c27755;
 }

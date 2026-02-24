@@ -176,7 +176,7 @@
     "format": " ",
     "tooltip": true,
     "tooltip-format": "Change Wallpapers & Theme",
-    "on-click": "kitty --class float_term -e ~/.config/waybar/scripts/set-wallpapers.sh"
+    "on-click": "setsid kitty --class float_term -e ~/.config/waybar/scripts/set-wallpapers.sh"
   },
 
   "custom/hyprsunset": {

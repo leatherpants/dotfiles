@@ -1,13 +1,14 @@
-@define-color widget #ffdad4;
-@define-color widget-hover #825249;
-@define-color on-widget #33110b;
+@define-color primary #ffb780;
+@define-color on-primary #4e2600;
 
-@define-color primary #bd0044;
-@define-color on-primary #ffffff;
+@define-color secondary #e9bf8f;
+@define-color secondary-container #5e411b;
+@define-color on-secondary-container #ffddb7;
 
-@define-color surface #ffe9ea;
-@define-color menuitem-hover #895031;
-@define-color on-menuitem-hover #ffffff;
-@define-color on-surface #261819;
+@define-color tertiary #e5c277;
+@define-color on-tertiary #3f2e00;
 
-@define-color separator #877274;
+@define-color surface #1d1108;
+@define-color on-surface #f7dece;
+
+@define-color outline #a28d7f;
