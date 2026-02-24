@@ -1,3 +1,63 @@
-@define-color accent_fg_color {{colors.on_primary_container.default.hex}};
-@define-color accent_bg_color {{colors.primary_container.default.hex}};
+/* 
+   Matugen GTK 核心变量模板
+   适用于 GTK4 (Libadwaita) 和支持 CSS 变量的 GTK3 主题
+*/
+
 @define-color accent_color {{colors.primary.default.hex}};
+@define-color accent_bg_color {{colors.primary.default.hex}};
+@define-color accent_fg_color {{colors.on_primary.default.hex}};
+
+@define-color destructive_color {{colors.error.default.hex}};
+@define-color destructive_bg_color {{colors.error.default.hex}};
+@define-color destructive_fg_color {{colors.on_error.default.hex}};
+
+/* 窗口与底色 - 使用 M3 的 Surface 容器层级 */
+@define-color window_bg_color {{colors.surface.default.hex}};
+@define-color window_fg_color {{colors.on_surface.default.hex}};
+@define-color view_bg_color {{colors.surface_container_low.default.hex}};
+@define-color view_fg_color {{colors.on_surface.default.hex}};
+
+/* 标题栏与页眉 */
+@define-color headerbar_bg_color {{colors.surface_container_high.default.hex}};
+@define-color headerbar_fg_color {{colors.on_surface.default.hex}};
+@define-color headerbar_border_color {{colors.outline_variant.default.hex}};
+@define-color headerbar_backdrop_color @window_bg_color;
+
+/* 侧边栏 */
+@define-color sidebar_bg_color {{colors.surface_container.default.hex}};
+@define-color sidebar_fg_color {{colors.on_surface_variant.default.hex}};
+@define-color sidebar_backdrop_color @window_bg_color;
+
+/* 列表与卡片 */
+@define-color card_bg_color {{colors.surface_container_highest.default.hex}};
+@define-color card_fg_color {{colors.on_surface.default.hex}};
+@define-color card_border_color {{colors.outline_variant.default.hex}};
+
+/* 交互状态：悬停与选中 */
+@define-color shadow_color rgba(0, 0, 0, 0.2);
+@define-color dark_fill_color {{colors.surface_variant.default.hex}};
+@define-color secondary_sidebar_bg_color {{colors.surface_container_low.default.hex}};
+
+/* 重点：Libadwaita 专有的辅助色映射 */
+@define-color success_color {{colors.primary.default.hex}};
+@define-color success_bg_color {{colors.primary.default.hex}};
+@define-color success_fg_color {{colors.on_primary.default.hex}};
+
+@define-color warning_color {{colors.tertiary.default.hex}};
+@define-color warning_bg_color {{colors.tertiary.default.hex}};
+@define-color warning_fg_color {{colors.on_tertiary.default.hex}};
+
+@define-color error_color {{colors.error.default.hex}};
+@define-color error_bg_color {{colors.error.default.hex}};
+@define-color error_fg_color {{colors.on_error.default.hex}};
+
+/* 自定义微调：让边框和输入框更符合 M3 规范 */
+popover {
+    background-color: @card_bg_color;
+    border: 1px solid @headerbar_border_color;
+}
+
+entry {
+    background-color: {{colors.surface_variant.default.hex}};
+    color: {{colors.on_surface_variant.default.hex}};
+}

@@ -5,9 +5,9 @@ input_path = './templates/gtk-colors.css'
 output_path = '~/.config/gtk-3.0/colors.css'
 post_hook = '[[ {{mode}} == "dark" ]] && THEME=adw-gtk3-dark || { [[ {{mode}} == "light" ]] && THEME=adw-gtk3 || exit 1; }; gsettings set org.gnome.desktop.interface gtk-theme "$THEME"'
 
-[templates.gtk4]
-input_path = './templates/gtk-colors.css'
-output_path = '~/.config/gtk-4.0/colors.css'
+# [templates.gtk4]
+# input_path = './templates/gtk-colors.css'
+# output_path = '~/.config/gtk-4.0/colors.css'
 
 [templates.swaync]
 input_path = "./templates/swaync-colors.css"

@@ -9,7 +9,7 @@
 
 window#waybar {
   background-color: transparent;
-  color: @on-widget;
+  color: @on-secondary-container;
 }
 
 #custom-startbutton {
@@ -25,11 +25,11 @@ window#waybar {
   padding-right: 11px;
   border-radius: 4px;
   margin: 0 1px;
-  background-color: @widget;
+  background-color: @secondary-container;
 }
 
 #workspaces button.hover {
-  background-color: @widget-hover;
+  background-color: @secondary;
 }
 
 #workspaces button:first-child {
@@ -68,7 +68,7 @@ window#waybar {
 #taskbar.main {
   border-radius: 16px;
   padding: 0 4px;
-  background-color: @widget;
+  background-color: @secondary-container;
 }
 
 #taskbar.main button {
@@ -80,7 +80,7 @@ window#waybar {
   padding-left: 4px;
   padding-right: 8px;
   margin: 0 2px;
-  background-color: @widget;
+  background-color: @secondary-container;
 }
 
 #taskbar.expanded button.active {
@@ -99,14 +99,14 @@ window#waybar {
   padding-left: 4px;
   padding-right: 8px;
   border-radius: 16px;
-  background-color: @widget;
+  background-color: @secondary-container;
 }
 
 #mpris {
   padding-left: 12px;
   padding-right: 16px;
   border-radius: 16px;
-  background-color: @widget;
+  background-color: @secondary-container;
 }
 
 window#waybar.empty #window {
@@ -114,7 +114,7 @@ window#waybar.empty #window {
 }
 
 .modules-right widget {
-  background-color: @widget;
+  background-color: @secondary-container;
   border-radius: 4px;
 }
 
@@ -174,8 +174,8 @@ menuitem:disabled {
 }
 
 menuitem:hover {
-  background-color: @menuitem-hover;
-  color: @on-menuitem-hover;
+  background-color: @tertiary;
+  color: @on-tertiary;
 }
 
 menuitem:active {
@@ -187,7 +187,7 @@ separator {
   padding: 1px;
   margin: 4px;
   opacity: 0.1;
-  background-color: @separator;
+  background-color: @outline;
 }
 
 tooltip {

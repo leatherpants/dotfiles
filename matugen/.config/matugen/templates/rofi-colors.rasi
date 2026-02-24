@@ -1,9 +1,11 @@
 * {
-  on-surface: {{colors.on_surface.default.hex}};
-  surface-container: {{colors.surface_container.default.hex}}88;
-  surface: {{colors.surface.default.hex}};
   primary-container: {{colors.primary_container.default.hex}};
   on-primary-container: {{colors.on_primary_container.default.hex}};
+
+  surface: {{colors.surface.default.hex}};
+  on-surface: {{colors.on_surface.default.hex}};
   on-surface-variant: {{colors.on_surface_variant.default.hex}};
+
+  window-background: {{colors.surface_container.default.hex}}88;
   selected: {{colors.tertiary.default.hex}}55;
 }

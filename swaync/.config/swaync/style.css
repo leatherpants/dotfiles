@@ -12,7 +12,7 @@
 
 .control-center {
   border-radius: 16px;
-  background-color: alpha(@surface-variant, 0.25);
+  background-color: alpha(@surface-container, 0.25);
   color: darker(darker(@on-surface));
 }
 
@@ -23,7 +23,7 @@
   margin-top: 8px;
   padding: 24px;
   padding-top: 32px;
-  background-color: alpha(@surface-shade, 0.3);
+  background-color: alpha(@surface-dim, 0.3);
 }
 
 .widget-title {
@@ -44,21 +44,23 @@
   padding: 10px 12px;
   border-radius: 500px;
   font-size: 12px;
-  background-color: @primary-variant;
+  background-color: @tertiary;
+  color: @on-tertiary;
 }
 
 .control-center-clear-all:hover {
-  background-color: darker(@primary-variant);
+  background-color: darker(@tertiary);
 }
 
 .control-center-clear-all:active {
-  background-color: darker(darker(@primary-variant));
+  background-color: @tertiary-container;
+  color: @on-tertiary-container;
 }
 
 .control-center-dnd {
   padding: 3px;
   border-radius: 500px;
-  background-color: @surface-variant;
+  background-color: @surface-container;
   border: 2px solid grey;
 }
 

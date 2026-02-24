@@ -7,7 +7,7 @@
 
 window {
 	// background-color: #ffe9e988;
-  background-color: @surface-container;
+  background-color: @window-background;
 	padding:          12px;
 	spacing:          12px;
 	border-radius: 24px;
