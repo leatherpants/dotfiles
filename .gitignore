@@ -1,1 +1,9 @@
 nvim/.config/nvim/lazy-lock.json
+gtk/.config/gtk-3.0/colors.css
+swaync/.config/swaync/colors.css
+hypr/.config/hypr/colors.conf
+rofi/.config/rofi/colors.rasi
+waybar/.config/waybar/colors.css
+kitty/.config/kitty/themes/Matugen.conf
+starship/.config/starship.toml
+fcitx5/.local/share/fcitx5/themes/Material/theme.conf

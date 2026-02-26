@@ -30,4 +30,13 @@ post_hook = 'pkill -SIGUSR2 waybar'
 [templates.kitty]
 input_path = './templates/kitty-colors.conf'
 output_path = '~/.config/kitty/themes/Matugen.conf'
-post_hook = "kitty +kitten themes --reload-in=all Matugen"
+post_hook = "kitty +kitten themes --reload-in=all --cache-age -1 Matugen"
+
+[templates.starship]
+input_path = './templates/starship-template.toml'
+output_path = '~/.config/starship.toml'
+
+[templates.fcitx5]
+input_path = './templates/fcitx5-colors.conf'
+output_path = '~/.local/share/fcitx5/themes/Material/theme.conf'
+post_hook = 'fcitx5-remote -r'
