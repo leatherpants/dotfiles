@@ -11,5 +11,3 @@ italic_font      auto
 bold_italic_font auto
 # END_KITTY_FONTS
 
-
-include ~/.cache/wal/colors-kitty.conf
