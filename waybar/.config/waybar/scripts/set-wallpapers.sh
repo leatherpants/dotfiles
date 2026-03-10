@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+MATUGEN_CACHE_DIR="$HOME/.cache/matugen"
+mkdir -p "$MATUGEN_CACHE_DIR"
+
+if [ -f "$MATUGEN_CACHE_DIR/config.env" ]; then
+    source "$MATUGEN_CACHE_DIR/config.env"
+fi
+
 #########################################################################
 ### 设定壁纸 ###
 
@@ -25,7 +32,7 @@ for monitor in $monitors; do
     [ "$monitor" == "$main_monitor" ] && title="$title (主显示器)"
     
     # 弹出 yad 文件选择器
-    selected=$(yad --file --title="$title" --image-filter="*.jpg *.png *.webp")
+    selected=$(yad --file --text="$title" --image-filter="*.jpg *.png *.webp")
     
     if [ -n "$selected" ]; then
         echo "为 $monitor 选择了壁纸: $selected"
@@ -38,13 +45,22 @@ done
 
 # 3. 处理主显示器壁纸
 main_wallpaper="${wallpaper_paths[$main_monitor]}"
-mkdir -p "$HOME/.cache/matugen"
-cp "$main_wallpaper" "$HOME/.cache/matugen/wal"
 
 # 4. 使用 hyprpaper 设定壁纸
+# 清空hyprpaper配置文件
+echo "splash = true" > "$HOME/.config/hypr/hyprpaper.conf"
+
+# 设定壁纸并写入配置文件
 for monitor in "${!wallpaper_paths[@]}"; do
     path="${wallpaper_paths[$monitor]}"
     hyprctl hyprpaper wallpaper "$monitor,$path"
+    cat <<EOF >> "$HOME/.config/hypr/hyprpaper.conf"
+wallpaper {
+    monitor = $monitor
+    path = $path
+    fit_mode = cover
+}
+EOF
 done
 
 echo "所有显示器的壁纸已设置完成！"
@@ -54,16 +70,40 @@ echo "所有显示器的壁纸已设置完成！"
 
 echo "--------2. 生成色板--------"
 
+NEW_MATUGEN_COLOR_SCHEME=$(yad --list --radiolist \
+    --text="Matugen 配色方案选择" \
+    --width=400 --height=500 \
+    --column="选择" --column="方案名称" \
+    FALSE "scheme-content" \
+    FALSE "scheme-expressive" \
+    FALSE "scheme-fidelity" \
+    FALSE "scheme-fruit-salad" \
+    FALSE "scheme-monochrome" \
+    FALSE "scheme-neutral" \
+    FALSE "scheme-rainbow" \
+    TRUE  "scheme-tonal-spot" \
+    FALSE "scheme-vibrant" \
+    --print-column=2 --separator="")
+
+# 检查用户是否点击了取消
+if [ -z "$NEW_MATUGEN_COLOR_SCHEME" ]; then
+    echo "未选择任何方案，退出。"
+    exit 1
+fi
+
+echo "你选择的方案是: $NEW_MATUGEN_COLOR_SCHEME"
+
 # 获取 darkman 的当前模式 (会返回 "light" 或 "dark")
 current_mode=$(darkman get)
 
 # 如果 darkman 获取失败，默认使用 dark
 [ -z "$current_mode" ] && current_mode="dark"
 
-echo "当前模式: $current_mode，正在生成 scheme-vibrant 色板..."
+echo "当前模式: $current_mode，正在生成 $NEW_MATUGEN_COLOR_SCHEME 色板..."
+
 
 # 执行 matugen 命令
-matugen_json=$( matugen image "$main_wallpaper" --type "scheme-vibrant" --mode "$current_mode" --json hsl)
+matugen_json=$( matugen image "$main_wallpaper" --type "$NEW_MATUGEN_COLOR_SCHEME" --mode "$current_mode" --json hsl)
 
 echo "色板生成完成！"
 
@@ -92,6 +132,13 @@ echo "根据主显示器的 Primary Hue ($hue)，选择了 Tela Circle 图标颜
 gsettings set org.gnome.desktop.interface icon-theme "Tela-circle-$icon_color-$current_mode"
 
 echo "图标主题颜色已设置完成！"
+
+##########################################################################
+### 保存配置文件###
+
+echo "" > "$MATUGEN_CACHE_DIR/config.env"
+echo "WALLPAPER=\"$main_wallpaper\"" >> "$MATUGEN_CACHE_DIR/config.env"
+echo "MATUGEN_COLOR_SCHEME=\"$NEW_MATUGEN_COLOR_SCHEME\"" >> "$MATUGEN_CACHE_DIR/config.env"
 
 echo "--------所有任务完成！--------"
 

@@ -3,6 +3,5 @@
 # if [ "$1" = "light" ]; then
 #   MODE="-l"
 # fi
-
-WALL="$HOME/.cache/matugen/wal"
-matugen -t scheme-vibrant -m $1 image "$WALL"
+source "$HOME/.cache/matugen/config.env"
+matugen -t $MATUGEN_COLOR_SCHEME -m $1 image "$WALLPAPER"
