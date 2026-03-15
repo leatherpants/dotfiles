@@ -4,4 +4,4 @@
 #   MODE="-l"
 # fi
 source "$HOME/.cache/matugen/config.env"
-matugen -t $MATUGEN_COLOR_SCHEME -m $1 image "$WALLPAPER"
+matugen -t $MATUGEN_COLOR_SCHEME -m $1 --source-color-index 0 image "$WALLPAPER"
