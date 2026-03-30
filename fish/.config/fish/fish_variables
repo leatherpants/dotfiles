@@ -5,3 +5,4 @@ SETUVAR --export EDITOR:nvim
 SETUVAR --export --path GOPATH:/home/xuhan/\x2ego
 SETUVAR __fish_initialized:4300
 SETUVAR fish_color_autosuggestion:cyan
+SETUVAR fish_user_paths:/home/xuhan/\x2elocal/bin
