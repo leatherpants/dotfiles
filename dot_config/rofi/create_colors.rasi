@@ -1,0 +1,11 @@
+* {
+  primary-container: #e6deff;
+  on-primary-container: #1d0d50;
+
+  surface: #fff8f4;
+  on-surface: #221a11;
+  on-surface-variant: #544432;
+
+  window-background: #fcebdb88;
+  selected: #7c571c55;
+}

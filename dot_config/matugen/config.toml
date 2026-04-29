@@ -1,0 +1,37 @@
+[config]
+
+[templates.gtk3]
+input_path = './templates/gtk-colors.css'
+output_path = '~/.config/gtk-3.0/colors.css'
+post_hook = '[[ {{mode}} == "dark" ]] && THEME=adw-gtk3-dark || { [[ {{mode}} == "light" ]] && THEME=adw-gtk3 || exit 1; }; gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings set org.gnome.desktop.interface gtk-theme "$THEME"; gsettings set org.gnome.desktop.interface color-scheme prefer-{{mode}}'
+
+[templates.swaync]
+input_path = "./templates/swaync-colors.css"
+output_path = "~/.config/swaync/colors.css"
+post_hook = "swaync-client -rs"
+
+[templates.hyprland]
+input_path = './templates/hyprland-colors.conf'
+output_path = '~/.config/hypr/colors.conf'
+
+[templates.rofi]
+input_path = './templates/rofi-colors.rasi'
+output_path = '~/.config/rofi/colors.rasi'
+
+[templates.waybar]
+input_path = './templates/waybar-colors.css'
+output_path = '~/.config/waybar/colors.css'
+
+[templates.kitty]
+input_path = './templates/kitty-colors.conf'
+output_path = '~/.config/kitty/themes/Matugen.conf'
+post_hook = "kitty +kitten themes --reload-in=all --cache-age -1 Matugen"
+
+[templates.starship]
+input_path = './templates/starship-template.toml'
+output_path = '~/.config/starship.toml'
+
+[templates.fcitx5]
+input_path = './templates/fcitx5-colors.conf'
+output_path = '~/.local/share/fcitx5/themes/Material/theme.conf'
+post_hook = 'pkill fcitx; fcitx5-remote -r'

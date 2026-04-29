@@ -1,0 +1,17 @@
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+end
+
+set -x -U GOPATH $HOME/.go
+set -x -U EDITOR nvim
+set -x -U fish_color_autosuggestion green
+
+fish_add_path ~/.local/bin
+
+{{- if eq .chezmoi.hostname "Designers-PC" }}
+
+eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+{{- end }}
+
+starship init fish | source
+zoxide init fish | source
