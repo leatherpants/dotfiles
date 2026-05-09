@@ -1,5 +1,6 @@
 #!/bin/env bash
 
+sleep 4
 CURRENT_THEME=$(gsettings get org.gnome.desktop.interface icon-theme | tr -d "'")
 NEW_THEME=$(echo "$CURRENT_THEME" | sed -E 's/-(light|dark)$//')
 NEW_THEME="${NEW_THEME}-$1"
