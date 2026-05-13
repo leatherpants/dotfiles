@@ -113,7 +113,7 @@ window#waybar.empty #window {
   background-color: transparent;
 }
 
-.modules-right widget {
+.modules-right > widget {
   background-color: @secondary-container;
   border-radius: 4px;
 }

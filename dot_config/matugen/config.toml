@@ -11,8 +11,12 @@ output_path = "~/.config/swaync/colors.css"
 post_hook = "swaync-client -rs"
 
 [templates.hyprland]
-input_path = './templates/hyprland-colors.conf'
-output_path = '~/.config/hypr/colors.conf'
+input_path = './templates/hyprland-colors.lua'
+output_path = '~/.config/hypr/lua/colors.lua'
+
+[templates.hyprtoolkit]
+input_path = './templates/hyprtoolkit.conf'
+output_path = '~/.config/hypr/hyprtoolkit.conf'
 
 [templates.rofi]
 input_path = './templates/rofi-colors.rasi'
