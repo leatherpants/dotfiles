@@ -1,10 +1,8 @@
-if status is-interactive
-    # Commands to run in interactive sessions can go here
-end
+# --- Global Env ---
 
-set -x -U GOPATH $HOME/.go
-set -x -U EDITOR nvim
-set -x -U fish_color_autosuggestion green
+set -gx GOPATH $HOME/.go
+set -gx EDITOR nvim
+set -gx fish_color_autosuggestion green
 
 fish_add_path ~/.local/bin
 
@@ -13,5 +11,14 @@ fish_add_path ~/.local/bin
 eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 {{- end }}
 
-starship init fish | source
+# --- Only for Interactive ---
+
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+    set -g fish_greeting ""
+    starship init fish | source
+    fastfetch -s Title:Separator:OS:Kernel:Shell:Memory:Swap:Disk:Colors --chafa ~/Pictures/wallpapers/COFFEE.jpg --logo-width 20
+end
+
+# --- Must be at bottom ---
 zoxide init fish | source
