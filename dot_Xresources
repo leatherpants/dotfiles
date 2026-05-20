@@ -1,0 +1,8 @@
+! 设置目标 DPI 值为 144（对应 150% 缩放）
+Xft.dpi: 144
+
+! 设置鼠标光标主题（填写主题文件夹的名称）
+Xcursor.theme: 'Bibata-Modern-Ice'
+
+! 设置鼠标光标大小（像素值）
+Xcursor.size: 32
