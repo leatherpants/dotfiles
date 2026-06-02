@@ -25,15 +25,9 @@ hl.config({
 
         tablet = {
             output = "DP-1",
-            -- Centerd, scaled up a little for comfort
-            -- region_position = "320 180",
-            -- Horizontally centered, vertically aligned top
-            region_position = "320 50",
-            region_size = "1920 1080",
+            region_position = "320 50", -- horizontally centered, vertically aligned top with 50px margin
+            region_size = "1920 1200", -- UGEE M808 with 16:10 aspect ratio
 
-            -- Centered, real size of the pad
-            -- region_position = "640 239",
-            -- region_size = "1280 801",
 	},
     },
 })
@@ -41,7 +35,6 @@ hl.config({
 -----------------
 --- Gestures ----
 -----------------
--- hl.gesture({ fingers = 2, direction = "pinch", action = "cursorZoom", zoom_level = "1", mode = "live" })
 
 hl.gesture({
     fingers = 3,
