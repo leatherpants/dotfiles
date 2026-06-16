@@ -163,7 +163,7 @@ hl.define_submap("resize", function()
     hl.bind("J", hl.dsp.window.resize({ x = 10, y = -10, relative = true}), { repeating = true })
 
     -- Use `reset` to go back to the global submap
-    hl.bind("catchall", hl.dsp.submap("reset"))
+    hl.bind("escape", hl.dsp.submap("reset"))
 
 end)
 
