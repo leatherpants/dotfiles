@@ -12,8 +12,8 @@
 
 .control-center {
   border-radius: 16px;
-  background-color: alpha(@surface-container, 0.25);
-  color: darker(darker(@on-surface));
+  background-color: alpha(@surface-container, 0.5);
+  color: @on-surface;
 }
 
 .control-center>viewport>box>box:last-child {
