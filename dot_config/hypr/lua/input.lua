@@ -172,20 +172,10 @@ hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("hyprshot -m active -m output -o ~/Pi
 hl.bind(mainMod .. " + SHIFT + C", hl.dsp.submap("screencapture"))
 
 -- Start a submap called "screencapture".
-hl.define_submap("screencapture", function()
-    hl.bind("R", function()
-        hl.dsp.exec_cmd("hyprshot -m region -o ~/Pictures/screenshots")
-        hl.dsp.submap("reset")
-    end)
-    hl.bind("W", function()
-        hl.dsp.exec_cmd("hyprshot -m window -o ~/Pictures/screenshots")
-        hl.dsp.submap("reset")
-    end)
-    hl.bind("O", function()
-        hl.dsp.exec_cmd("hyprshot -m output -o ~/Pictures/screenshots")
-        hl.dsp.submap("reset")
-    end)
-    hl.bind("catchall", hl.dsp.submap("reset"))
+hl.define_submap("screencapture", "reset", function()
+    hl.bind("R", hl.dsp.exec_cmd("hyprshot -m region -o ~/Pictures/screenshots") )
+    hl.bind("W", hl.dsp.exec_cmd("hyprshot -m window -o ~/Pictures/screenshots") )
+    hl.bind("O", hl.dsp.exec_cmd("hyprshot -m output -o ~/Pictures/screenshots") )
 end)
 
 -- Laptop multimedia keys for volume and LCD brightness
