@@ -39,3 +39,8 @@ output_path = '~/.config/starship.toml'
 input_path = './templates/fcitx5-colors.conf'
 output_path = '~/.local/share/fcitx5/themes/Material/theme.conf'
 post_hook = 'pkill fcitx; fcitx5-remote -r'
+
+[templates.tmux]
+input_path = './templates/tmux-colors.conf'
+output_path = '~/.config/tmux/colors.conf'
+post_hook = 'tmux source-file ~/.config/tmux/tmux.conf'

@@ -1,0 +1,20 @@
+source-file ~/.config/tmux/colors.conf
+
+# Set default shell
+{{- if eq .chezmoi.hostname "Designers-PC" }}
+set-option -g default-shell "/home/linuxbrew/.linuxbrew/bin/fish"
+{{- else }}
+set-option -g default-shell "/usr/bin/fish"
+{{- end }}
+
+# Use hjkl to switch panes
+bind -r h select-pane -L
+bind -r j select-pane -D
+bind -r k select-pane -U
+bind -r l select-pane -R
+
+# Use arrow keys to resize panes
+bind -r c-h resize-pane -L 5
+bind -r c-j resize-pane -D 5
+bind -r c-k resize-pane -U 5
+bind -r c-l resize-pane -R 5
