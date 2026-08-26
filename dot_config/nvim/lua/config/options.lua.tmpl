@@ -19,6 +19,8 @@ vim.o.clipboard = "unnamedplus"
 -- Shell 
 {{- if eq .chezmoi.hostname "Designers-PC" }}
 vim.o.shell = "/home/linuxbrew/.linuxbrew/bin/fish"
+{{- else if eq .chezmoi.os "windows" }}
+vim.o.shell = "powershell.exe"
 {{- else }}
 vim.o.shell = "/usr/bin/fish"
 {{- end }}
