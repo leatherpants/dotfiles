@@ -1,0 +1,30 @@
+README.md
+
+{{- if eq .chezmoi.os "linux" }}
+AppData
+{{- end }}
+
+{{- if eq .chezmoi.hostname "Designers-PC" }}
+.ideavimrc
+.local
+.Xresources
+.ssh
+
+.config/*
+!.config/nvim
+!.config/mpv
+!.config/tmux
+!.config/fish
+!.config/starship.toml
+!.config/fastfetch
+{{- end }}
+
+
+{{- if eq .chezmoi.os "windows" }}
+.config/*
+!.config/nvim
+.ideavimrc
+.local
+.Xresources
+.ssh
+{{- end }}
